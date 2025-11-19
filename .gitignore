@@ -1,0 +1,48 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+out/
+
+# tsup
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+log.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Docker
+docker/*.env
+docker/*.log
+docker-compose.override.yml
+
+# Redis volumes (caso use local)
+data/
+dump.rdb
+appendonly.aof
+
+# Temporary
+tmp/
+temp/
+.cache/
