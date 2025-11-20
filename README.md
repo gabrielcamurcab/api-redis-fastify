@@ -1,6 +1,6 @@
 # API Redis Fastify
 
-API simples usando **Fastify**, **TypeScript**, **Redis (via Docker)** e uma organização limpa de pastas.
+API simples de sorteio usando **Fastify**, **TypeScript**, **Redis (via Docker)** e uma organização limpa de pastas.
 
 A ideia aqui é treinar **caching através de Redis** e **clean arch** ao mesmo tempo. 
 
@@ -73,32 +73,34 @@ http://localhost:3000
 
 ## 🧪 Endpoints
 
-### POST /cache
-Salva um valor no Redis.
+### POST /sessions
+Cria uma nova sessão
 
+
+### POST /sessions/:id/names
 ```json
 {
-  "key": "user:1",
-  "value": "Camurça",
+  "name": "Fulano"
 }
 ```
+Adiciona um novo nome para a lista de sorteio.
 
-### GET /cache/:key
-Busca um valor salvo.
+### POST /sessions/:id/draw
+Realiza o sorteio.
 
 ## O que será implementado
 
 ### Requisitos funcionais
 
-- [ ] Endpoint de criação de sessão
-- [ ] Endpoint de adição de nomes para sorteio
-- [ ] Endpoint de sorteio
+- [x] Endpoint de criação de sessão
+- [x] Endpoint de adição de nomes para sorteio
+- [x] Endpoint de sorteio
 
 ### Requisitos Não-funcionais
 
-- [ ] A sessão deve durar 24h
-- [ ] O tempo de armazenamento de conjunto de nomes para sorteio e nome sorteado deve ser de 1h
+- [x] A sessão deve durar 24h
+- [x] O tempo de armazenamento de conjunto de nomes para sorteio e nome sorteado deve ser de 1h
 
 ### Regras de Negócio
 
-- [ ] O sorteio deve ocorrer da forma mais aleatória possível
+- [x] O sorteio deve ocorrer da forma mais aleatória possível
