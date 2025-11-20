@@ -1,4 +1,4 @@
-import { SessionPort } from "../application/ports/session";
+import { SessionPort } from "../../application/ports/session";
 
 export class CreateSessionUseCase {
     constructor (private readonly sessions: SessionPort) {}

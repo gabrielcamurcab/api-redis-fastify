@@ -1,6 +1,6 @@
 import Redis from "ioredis";
 import { NotFoundRedisKeyError } from "./errors/not-found-redis-key.error";
-import { CacheRepository } from "../application/ports/cache-repository";
+import { CacheRepository } from "../../application/ports/cache-repository";
 const redis = new Redis();
 
 export class GetCacheDataUseCase {

@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import Redis from "ioredis";
-import { PostCacheDataUseCase } from "../../../use-cases/post-cache-data.usecase";
+import { PostCacheDataUseCase } from "../../../core/use-cases/post-cache-data.usecase";
 import { PostCacheEntry } from "../dtos/post-cache.request";
 import { RedisClient } from "../../cache/redis/redis-client";
 import { RedisRepository } from "../../cache/redis/redis.repository";

@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { GetCacheDataUseCase } from "../../../use-cases/get-cache-data.usecase";
-import { NotFoundRedisKeyError } from "../../../use-cases/errors/not-found-redis-key.error";
+import { GetCacheDataUseCase } from "../../../core/use-cases/get-cache-data.usecase";
+import { NotFoundRedisKeyError } from "../../../core/use-cases/errors/not-found-redis-key.error";
 import { RedisRepository } from "../../cache/redis/redis.repository";
 import { RedisClient } from "../../cache/redis/redis-client";
 
