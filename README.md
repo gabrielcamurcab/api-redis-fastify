@@ -85,6 +85,9 @@ Cria uma nova sessão
 ```
 Adiciona um novo nome para a lista de sorteio.
 
+### GET /sessions/:id/names
+Retorna os nomes de sorteio daquela sessão.
+
 ### POST /sessions/:id/draw
 Realiza o sorteio.
 
@@ -95,6 +98,7 @@ Realiza o sorteio.
 - [x] Endpoint de criação de sessão
 - [x] Endpoint de adição de nomes para sorteio
 - [x] Endpoint de sorteio
+- [x] Endpoint de lista de nomes
 
 ### Requisitos Não-funcionais
 
