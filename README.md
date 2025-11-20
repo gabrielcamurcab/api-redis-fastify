@@ -85,3 +85,20 @@ Salva um valor no Redis.
 
 ### GET /cache/:key
 Busca um valor salvo.
+
+## O que será implementado
+
+### Requisitos funcionais
+
+- [ ] Endpoint de criação de sessão
+- [ ] Endpoint de adição de nomes para sorteio
+- [ ] Endpoint de sorteio
+
+### Requisitos Não-funcionais
+
+- [ ] A sessão deve durar 24h
+- [ ] O tempo de armazenamento de conjunto de nomes para sorteio e nome sorteado deve ser de 1h
+
+### Regras de Negócio
+
+- [ ] O sorteio deve ocorrer da forma mais aleatória possível
