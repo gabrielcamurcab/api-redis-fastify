@@ -1,6 +1,10 @@
+import { FastifyError } from "fastify";
 import { DrawPort } from "../../application/ports/draw";
 import { NamesPort } from "../../application/ports/names";
 import { SessionPort } from "../../application/ports/session";
+import createError from "@fastify/error";
+import { SessionNotFoundError } from "./errors/session-not-found.error";
+import { NoNamesError } from "./errors/no-names.error";
 
 export class DrawUseCase {
     constructor(
@@ -12,12 +16,12 @@ export class DrawUseCase {
     async execute(sessionId: string): Promise<string> {
         const exists = await this.sessions.exists(sessionId);
         if (!exists) {
-            throw new Error("Session not found");
+            throw new SessionNotFoundError();
         }
 
         const list = await this.names.getNames(sessionId);
         if (list.length === 0) {
-            throw new Error("No names to draw");
+            throw new NoNamesError();
         }
 
         const random = list[Math.floor(Math.random() * list.length)];
