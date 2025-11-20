@@ -1,6 +1,7 @@
 import { AddNameUseCase } from "../core/use-cases/add-name.usecase";
 import { CreateSessionUseCase } from "../core/use-cases/create-session.usecase";
 import { DrawUseCase } from "../core/use-cases/draw.usecase";
+import { GetNamesUseCase } from "../core/use-cases/get-names.usecase";
 import { RedisClient } from "../infra/cache/redis/redis-client";
 import { RedisDrawRepository } from "../infra/cache/redis/redis-draw.repository";
 import { RedisNamesRepository } from "../infra/cache/redis/redis-names.repository";
@@ -28,4 +29,8 @@ export const drawUseCase = new DrawUseCase(
     sessionRepository,
     namesRepository,
     drawRepository
+);
+
+export const getNamesUseCase = new GetNamesUseCase(
+    namesRepository
 );
