@@ -24,4 +24,12 @@ export class RedisSessionRepository implements SessionPort {
         const exists = await this.redis.raw.exists(`session:${sessionId}`);
         return exists === 1;
     }
+
+    async dropSession(sessionId: string): Promise<void> {
+        await this.redis.raw.del(
+            `session:${sessionId}`,
+            `session:${sessionId}:names`,
+            `session:${sessionId}:result`,
+        );
+    }
 }
