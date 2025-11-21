@@ -5,7 +5,8 @@ import { sessionRoutes } from "./infra/http/routes/session.routes";
 const app = Fastify();
 
 app.register(cors, {
-    origin: "*"
+    origin: "*",
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD']
 });
 
 app.register(sessionRoutes);
