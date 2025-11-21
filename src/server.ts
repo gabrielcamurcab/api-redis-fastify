@@ -1,19 +1,17 @@
 import Fastify from "fastify";
-import Redis from "ioredis";
+import cors from "@fastify/cors";
 import { sessionRoutes } from "./infra/http/routes/session.routes";
 
 const app = Fastify();
 
-const redis = new Redis({
-    host: "localhost",
-    port: 6379
+app.register(cors, {
+    origin: "*"
 });
-
-redis.on("connect", () => console.log("Redis conectado!"));
-redis.on("error", (err) => console.error(err));
 
 app.register(sessionRoutes);
 
-app.listen({ port: 3000 }).then(() => {
+const port = Number(process.env.PORT || 8080);
+
+app.listen({ port }).then(() => {
     console.log("Servidor rodando");
 });

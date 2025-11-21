@@ -3,7 +3,7 @@ import { SessionPort } from "../../../application/ports/session";
 import { RedisClient } from "./redis-client";
 
 export class RedisSessionRepository implements SessionPort {
-    private readonly SESSION_TTL = 86400; // 24H
+        private readonly SESSION_TTL = process.env.SESSION_TTL || 86400; // 24H
 
     constructor (private readonly redis: RedisClient) {}
 

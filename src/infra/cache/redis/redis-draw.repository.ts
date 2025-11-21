@@ -2,7 +2,7 @@ import { DrawPort } from "../../../application/ports/draw";
 import { RedisClient } from "./redis-client";
 
 export class RedisDrawRepository implements DrawPort {
-    private readonly RESULT_TTL = 3600; // 1H
+    private readonly RESULT_TTL = process.env.RESULT_TTL || 3600; // 1H
     
     constructor (private readonly redis: RedisClient) {}
 

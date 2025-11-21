@@ -76,7 +76,6 @@ http://localhost:3000
 ### POST /sessions
 Cria uma nova sessão
 
-
 ### POST /sessions/:id/names
 ```json
 {

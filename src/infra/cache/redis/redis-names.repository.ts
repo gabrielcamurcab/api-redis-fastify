@@ -2,7 +2,7 @@ import { NamesPort } from "../../../application/ports/names";
 import { RedisClient } from "./redis-client";
 
 export class RedisNamesRepository implements NamesPort {
-    private readonly NAMES_TTL = 3600; // 1H
+    private readonly NAMES_TTL = process.env.NAMES_TTL || 3600; // 1H
 
     constructor (private readonly redis: RedisClient) {}
 
