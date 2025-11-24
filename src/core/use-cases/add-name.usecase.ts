@@ -19,6 +19,14 @@ export class AddNameUseCase {
             throw new InvalidNameError();
         }
 
+        if (name.split(",").length > 1) {
+            const names = name.split(",").map(n => n.trim());
+            for (const n of names) {
+                await this.names.addName(sessionId, n);
+            }
+            return;
+        }
+
         await this.names.addName(sessionId, name);
     }
 }
